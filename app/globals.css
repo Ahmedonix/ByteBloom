@@ -1,0 +1,128 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 244 247 245;
+    --foreground: 51 56 64;
+    --card: 244 247 245;
+    --card-foreground: 51 56 64;
+    --popover: 244 247 245;
+    --popover-foreground: 51 56 64;
+    --primary: 63 169 107;
+    --primary-foreground: 255 255 255;
+    --secondary: 160 240 209;
+    --secondary-foreground: 51 56 64;
+    --muted: 244 247 245;
+    --muted-foreground: 115 115 115;
+    --accent: 51 56 64;
+    --accent-foreground: 255 255 255;
+    --destructive: 239 68 68;
+    --destructive-foreground: 255 255 255;
+    --border: 160 240 209;
+    --input: 160 240 209;
+    --ring: 63 169 107;
+    --radius: 0.5rem;
+    --chart-1: 63 169 107;
+    --chart-2: 160 240 209;
+    --chart-3: 51 56 64;
+    --chart-4: 244 247 245;
+    --chart-5: 45 90 61;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f4f7f5;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #a0f0d1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #3fa96b;
+}
+
+/* Smooth transitions for all elements */
+* {
+  transition: all 0.2s ease-in-out;
+}
+
+/* Glassmorphism effect */
+.glass {
+  background: rgba(244, 247, 245, 0.8);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(160, 240, 209, 0.2);
+}
+
+/* Gradient text animation */
+@keyframes gradient-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.gradient-text {
+  background: linear-gradient(-45deg, #3fa96b, #a0f0d1, #3fa96b, #a0f0d1);
+  background-size: 400% 400%;
+  animation: gradient-shift 3s ease infinite;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Floating animation */
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Pulse animation */
+@keyframes pulse-green {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(63, 169, 107, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(63, 169, 107, 0);
+  }
+}
+
+.pulse-green {
+  animation: pulse-green 2s infinite;
+}
